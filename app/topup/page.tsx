@@ -1,0 +1,3 @@
+import OrderForm from "@/components/OrderForm";
+import { robuxPacks } from "@/lib/config";
+export default function Topup(){return <main className="page-wrap"><div className="page-title"><span className="eyebrow">ROBux DELIVERY</span><h1>Top Up <em>Robux</em></h1><p>Pilih nominal, isi data pesanan, lalu periksa username Roblox dan lanjutkan ke pembayaran QRIS.</p></div><div className="pack-grid">{robuxPacks.map(p=><article className="pack-card" key={p.id}><span className="tag">ROBLOX</span><h2>{p.label}</h2><strong>Rp{p.price.toLocaleString("id-ID")}</strong><OrderForm kind="robux" itemId={p.id} itemName={p.label} price={p.price}/></article>)}</div></main>}
